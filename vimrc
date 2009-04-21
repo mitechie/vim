@@ -308,8 +308,14 @@ let Tlist_Use_SingleClick = 1
 " enable html tag matching
 source ~/.vim/ftplugin/html_closetag.vim
 
+" Settings for the tasklist plugin
+map <leader>t <Plug>TaskList
+let g:tlTokenList = ["FIXME", "TODO", "todo"]
+
+
 " enable a shortcut for tidy using ~/.tidyrc config
-map <Leader>t :!tidy -config ~/.tidyrc<cr><cr> 
+map <Leader>T :!tidy -config ~/.tidyrc<cr><cr> 
+
 
 " UNIT TESTS
 " toggle between test file and normal file
