@@ -1,0 +1,3 @@
+snippy_plugin.vba: call delete('/home/rharding/.vim/plugin/snippetsEmu.vim')|call delete('/home/rharding/.vim/doc/snippets_emu.txt')
+tComment.vba: call delete('/home/rharding/.vim/doc/tComment.txt')|call delete('/home/rharding/.vim/plugin/tComment.vim')|call delete('/home/rharding/.vim/autoload/tcomment.vim')
+toggle_unit_tests.vba: call delete('/home/rharding/.vim/plugin/toggle_unit_tests.vim')|call delete('/home/rharding/.vim/doc/toggle_unit_tests.txt')

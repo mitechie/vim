@@ -1,0 +1,5 @@
+sudo apt-get install tidy perl-doc
+
+ln -s ~/config_repo/vim/vim ~/.vim
+ln -s ~/config_repo/vim/vimrc ~/.vimrc
+
