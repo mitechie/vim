@@ -1,0 +1,6 @@
+[submodule "vim/submodule/pyflakes"]
+	path = vim/submodule/pyflakes
+	url = git://github.com/kevinw/pyflakes.git
+[submodule "vim/submodule/pyflakes-vim"]
+	path = vim/submodule/pyflakes-vim
+	url = git://github.com/kevinw/pyflakes-vim.git
