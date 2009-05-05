@@ -244,7 +244,7 @@ au BufWritePost *.css silent !jsmin.pl %
 
 " PYTHON Stuff
 " plugin that adds support for pdb from within vim
-au FileType python source ~/.vim/python/VimPdb.vim
+" au FileType python source ~/.vim/python/VimPdb.vim
 au FileType python source ~/.vim/python/jpythonfold.vim
 
 au FileType python set omnifunc=pythoncomplete#Complete
