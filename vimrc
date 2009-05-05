@@ -7,7 +7,7 @@ set ls=2                " allways show status line
 set tabstop=4           " numbers of spaces of tab character
 set shiftwidth=4        " numbers of spaces to (auto)indent
 set scrolloff=3         " keep 3 lines when scrolling
-set cursorline          " have a line indicate the cursor location
+"set cursorline          " have a line indicate the cursor location
 set cindent             " cindent
 set autoindent          " always set autoindenting on
 set showcmd             " display incomplete commands
@@ -166,16 +166,18 @@ if version>=600
         set background=dark  " adapt colors for background
         set keymodel=
         set mousehide
-		colorscheme tango2
-		colorscheme lucius
+		"colorscheme tango2
+		"colorscheme lucius
+		colorscheme wombat
 
 
         " To set the toolbars off (icons on top of the screen)
         set guioptions-=T
     else
         set background=dark   " adapt colors for dark background
-        colorscheme tango2   " use this color scheme
-		colorscheme lucius
+        "colorscheme tango2   " use this color scheme
+		"colorscheme lucius
+		colorscheme wombat
     endif
 endif
 " }}}
