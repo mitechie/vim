@@ -1,0 +1,3 @@
+# Commands to link up the submodules to their places in the vim dir
+ln -s /home/rharding/.vim/submodule/pyflakes/pyflakes /home/rharding/.vim/after/ftplugin/python/pyflakes
+ln -s /home/rharding/.vim/submodule/pyflakes-vim/pyflakes.vim /home/rharding/.vim/after/ftplugin/python/pyflakes.vim

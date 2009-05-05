@@ -56,6 +56,10 @@ set wildmode=longest,list
 " Y yanks to the end of the line
 nmap Y y$
 
+
+" Test for the pyflakes file
+filetype plugin indent on
+
 ",v brings up my .vimrc
 ",V reloads it -- making all changes active (have to save first)
 map <leader>v :sp ~/.vimrc<CR><C-W>_
