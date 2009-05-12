@@ -1,4 +1,57 @@
-" Vimrc - Christian Andersen <http://phuzz.org>
+" Vimrc - Richard Harding
+"
+" Started with base by: Christian Andersen <http://phuzz.org>
+"
+" Shortcuts:
+" tab       - auto complete ctags/etc
+" C-f       - OnmiComplete
+"
+" t         - open NERDTree
+" F8        - Open Taglist window
+"
+" Y         - yank to the end of the line
+" C-s       - save file
+" C-m       - :make current file
+"
+" C-j       - move cursor to split below
+" C-k       - move cursor to split above
+" C-h       - move cursor to split left
+" C-l       - move cursor to split right
+" (above also works in insert mode)
+"
+" C-n       - clear the current search hilight
+" C-t       - open the unit test file test_xxxxx
+"
+" -         - shrink size of current split with minus sign
+" =         - increase size of current split with =
+" 
+" Alt-,     - increase split width
+" Alt-.     - decrease split width
+"
+" f2        - close current window
+"
+" ,v        - open .vimrc file for editing
+" ,V        - reload .vimrc
+" ,case     - transforms camelCase to camel_case
+" ,m        - :make current file
+" ,t        - open todo list
+" ,T        - run HTML Tidy on the content
+" ,b        - open buffer list
+"
+" <CR>      - create newline with carriage return in normal mode 
+" <SPACE>   - open the current fold we're on
+"
+" gc        - comment the highlighted text
+" ggc       - comment out the current line
+"
+" PERL
+"   F1      - run Perldoc for the current word
+"
+" PHP
+"   C-u     - run the PHPDOC command for the function we're on
+"               note: doesn't work if pamams wrap lines
+"
+"
 " basics sets {{{
 let mapleader = "," " change the leader to be a comma vs slash
 set textwidth=80        " Try this out to see how textwidth helps
@@ -340,43 +393,3 @@ imap <C-f> <C-x><C-o>
 
 
 
-""""" VERSION CONTROL {{{
-
-" Commands
-" ,d svn diff of local changes
-" ,z bzr diff of local changes
-   
-function! Svndiff2()
-    let dir = expand('%:p:h')
-    let fn = expand('%')
-    execute ":vert diffsplit" . dir . "/.svn/text-base/" . fn . ".svn-base"
-    unlet fn dir
-    return
-endfunction
-
-function! Svndiff()
-    let fn = expand('%:p')
-    new
-    set ft=diff
-    execute ":.!svn diff -r BASE " . fn
-    unlet fn
-    return
-endfunction
-
-nmap <silent> <leader>D :call Svndiff()<CR>
-nmap <silent> <leader>d :call Svndiff2()<CR>
-
-func! BZRDiff()
-    let filename = expand("%")
-    let tempfile = "/tmp/" . expand("%:t")
-    let shell_command = "bzr cat -r-1 " . filename . " > " . tempfile
-
-    call system(shell_command)
-    execute ":vert diffsplit " . tempfile
-
-    unlet filename tempfile shell_command
-endfunc
-comm! BD call BZRDiff()
-nmap <silent> <leader>z :call BZRDiff()<CR>
-
-" }}}

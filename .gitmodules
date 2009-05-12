@@ -4,3 +4,6 @@
 [submodule "vim/submodule/pyflakes-vim"]
 	path = vim/submodule/pyflakes-vim
 	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "vim/submodule/scm-diff"]
+	path = vim/submodule/scm-diff
+	url = git://github.com/ghewgill/vim-scmdiff.git

@@ -1,0 +1,1 @@
+/home/rharding/.vim/submodule/scm-diff/scmdiff.vim
