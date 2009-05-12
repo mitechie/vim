@@ -7,3 +7,6 @@
 [submodule "vim/submodule/scm-diff"]
 	path = vim/submodule/scm-diff
 	url = git://github.com/ghewgill/vim-scmdiff.git
+[submodule "vim/submodule/git-vim"]
+	path = vim/submodule/git-vim
+	url = git://github.com/motemen/git-vim.git

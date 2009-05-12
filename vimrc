@@ -51,6 +51,20 @@
 "   C-u     - run the PHPDOC command for the function we're on
 "               note: doesn't work if pamams wrap lines
 "
+" Version Control
+"  ,d       - svn diff local changes
+"  ,z       - bzr diff local changes
+"
+"   Git
+"     ,gd       - :GitDiff
+"     ,gd       - :GitDiff --cached
+"     ,gs       - :GitStatus 
+"     ,gl       - :GitLog 
+"     ,ga       - :GitAdd 
+"     ,gA       - :GitAdd <cfile> 
+"     ,gc       - :GitCommit 
+"     <Enter>   - In git-status buffer :GitAdd <cfile> 
+"
 "
 " basics sets {{{
 let mapleader = "," " change the leader to be a comma vs slash
@@ -388,6 +402,46 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " map Control-F to the onmicomplete
 imap <C-f> <C-x><C-o>
+
+" }}}
+""""" VERSION CONTROL {{{
+
+" Commands
+" ,d svn diff of local changes
+" ,z bzr diff of local changes
+   
+function! Svndiff2()
+    let dir = expand('%:p:h')
+    let fn = expand('%')
+    execute ":vert diffsplit" . dir . "/.svn/text-base/" . fn . ".svn-base"
+    unlet fn dir
+    return
+endfunction
+
+function! Svndiff()
+    let fn = expand('%:p')
+    new
+    set ft=diff
+    execute ":.!svn diff -r BASE " . fn
+    unlet fn
+    return
+endfunction
+
+nmap <silent> <leader>D :call Svndiff()<CR>
+nmap <silent> <leader>d :call Svndiff2()<CR>
+
+func! BZRDiff()
+    let filename = expand("%")
+    let tempfile = "/tmp/" . expand("%:t")
+    let shell_command = "bzr cat -r-1 " . filename . " > " . tempfile
+
+    call system(shell_command)
+    execute ":vert diffsplit " . tempfile
+
+    unlet filename tempfile shell_command
+endfunc
+comm! BD call BZRDiff()
+nmap <silent> <leader>z :call BZRDiff()<CR>
 
 " }}}
 
