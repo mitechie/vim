@@ -1,0 +1,1 @@
+/home/rharding/.vim/submodule/git-vim/plugin/git.vim

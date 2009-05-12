@@ -1,0 +1,1 @@
+/home/rharding/.vim/submodule/git-vim/syntax/git-diff.vim
