@@ -99,6 +99,10 @@ set sm                  " show matching braces, somewhat annoying...
 " move freely between files
 set whichwrap=b,s,h,l,<,>,[,]   
 
+" set a git statusline 
+set statusline=%F%m%r%h%w\ [TYPE=%Y]\ %=[POS=%04l,%04v][%p%%]\ [LEN=%L]\ %#StatusLineNC#\ Git\ %#Folded#\ %{GitBranchInfoTokens()[0]}\ %#StatusLine# 
+
+
 " Make command line two lines high
 set ch=3
 

@@ -10,3 +10,6 @@
 [submodule "vim/submodule/git-vim"]
 	path = vim/submodule/git-vim
 	url = git://github.com/motemen/git-vim.git
+[submodule "vim/submodule/vim-git-branch-info"]
+	path = vim/submodule/vim-git-branch-info
+	url = git://github.com/taq/vim-git-branch-info.git
