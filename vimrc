@@ -35,7 +35,7 @@
 "
 " ,v        - open .vimrc file for editing
 " ,V        - reload .vimrc
-" ,case     - transforms camelCase to camel_case
+" ,c        - transforms camelCase to camel_case
 " ,m        - :make current file
 " ,t        - open todo list
 " ,T        - run HTML Tidy on the content
@@ -145,7 +145,7 @@ vmap <c-s> <esc><c-s>
 imap <c-s> <esc><c-s> 
 
 " Turns visually selected camelCase into camel_case
-vnoremap <leader>case :s/\v\C(([a-z]+)([A-Z]))/\2_\l\3/g<CR>
+vnoremap <leader>c :s/\v\C(([a-z]+)([A-Z]))/\2_\l\3/g<CR>
 
 " Run Make with ctrl-m
 " or ,m
