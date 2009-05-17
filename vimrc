@@ -21,6 +21,9 @@
 "
 " C-n       - clear the current search hilight
 " C-t       - open the unit test file test_xxxxx
+" 
+" C-p       - tab complete with snipMate 
+" C-r<tab>  - show available snippets from snipMate
 "
 " -         - shrink size of current split with minus sign
 " =         - increase size of current split with =
