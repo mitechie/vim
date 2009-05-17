@@ -392,8 +392,8 @@ map <Leader>T :!tidy -config ~/.tidyrc<cr><cr>
 
 " UNIT TESTS
 " toggle between test file and normal file
-let g:unit_test_prefix='test_'
-map <C-t> <esc>:TUT<CR>
+"let g:unit_test_prefix='test_'
+"map <C-t> <esc>:TUT<CR>
 
 """"" Completion {{{
 
