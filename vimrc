@@ -69,6 +69,11 @@
 "     <Enter>   - In git-status buffer :GitAdd <cfile> 
 "
 " TwitVim info:
+" F7        - load identica
+" F8        - load twitter
+" ,g        - load the user you see in an @reply
+"
+"
 " ~/.vim/twitvim.vim
 " 
 " let twitvim_enable_python = 1
@@ -186,10 +191,10 @@ nmap <Space> zo
 """"" SPLITS and Windows {{{{
 
 " Ctrl-jklm  changes to that split
-map <C-j> <C-W>j<C-W>_
-map <C-k> <C-W>k<C-W>_
-map <c-l> <c-w>l<c-w>_ 
-map <c-h> <c-w>h<c-w>_
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
 " fast switching / maximization of window panes
 " and vsplits
