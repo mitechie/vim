@@ -26,7 +26,7 @@
 " C-r<tab>  - show available snippets from snipMate
 "
 " -         - shrink size of current split with minus sign
-" =         - increase size of current split with =
+" +         - increase size of current split with =
 " 
 " Alt-,     - increase split width
 " Alt-.     - decrease split width
@@ -67,6 +67,28 @@
 "     ,gA       - :GitAdd <cfile> 
 "     ,gc       - :GitCommit 
 "     <Enter>   - In git-status buffer :GitAdd <cfile> 
+"
+" TwitVim info:
+" ~/.vim/twitvim.vim
+" 
+" let twitvim_enable_python = 1
+" let twitvim_login = "user:pass"
+"
+" function! Switch_to_twitter()
+"    let g:twitvim_api_root = "https://twitter.com"
+"    FriendsTwitter
+" endfunction
+"
+" function! Switch_to_identica()
+"    let g:twitvim_api_root = "https://identi.ca/api"
+"    FriendsTwitter
+" endfunction
+"
+" command! ToTwitter :call Switch_to_twitter()
+" command! ToIdentica :call Switch_to_identica()
+" nnoremap <F7> :ToIdentica<cr>
+" nnoremap <F8> :ToTwitter<cr>
+"
 "
 "
 " basics sets {{{
@@ -180,7 +202,7 @@ imap <C-W> <C-O><C-W>
 
 " use - and + to resize horizontal splits
 map - <C-W>-
-map = <C-W>+
+map + <C-W>+
 
 " and for vsplits with alt-< or alt->
 map <M-,> <C-W>>
@@ -449,4 +471,5 @@ nmap <silent> <leader>z :call BZRDiff()<CR>
 " }}}
 
 
+source ~/.vim/twitvim.vim
 
