@@ -276,7 +276,7 @@ if version>=600
         set guioptions-=T
     else
         set background=dark   " adapt colors for dark background
-        "colorscheme tango2   " use this color scheme
+        " colorscheme tango2   " use this color scheme
 		"colorscheme lucius
 		colorscheme wombat
     endif
@@ -434,6 +434,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 imap <C-f> <C-x><C-o>
 
 " }}}
+
+
 """"" VERSION CONTROL {{{
 
 " Commands
@@ -478,3 +480,21 @@ nmap <silent> <leader>z :call BZRDiff()<CR>
 
 source ~/.vim/twitvim.vim
 
+
+""""" Custom Commands {{{
+
+" Clear out all of the debug dump in the current buffer
+function! RHClearDebug()
+    if &filetype == 'PHP' 
+        execute "g/var_dump/d"
+    elseif &filetype == 'JAVASCRIPT'
+        execute "g/console.log/d"
+    endif
+endfunction
+
+if !exists(":RHClearDebug")
+    command RHClearDebug :call RHClearDebug()
+endif
+
+
+" }}}
