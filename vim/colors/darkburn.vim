@@ -4,7 +4,7 @@
 " Maintainer: Taurus Olson <taurusolson@gmail.com>
 " License:    GPL
 " Created:    2009-03-27 20:25:21 CET
-" Version: 0.1
+" Version:    1.1
 
 " Modified version of zenburn originally created by: 
 " Maintainer:   Jani Nurminen <slinky@iki.fi>
@@ -68,7 +68,7 @@ hi clear
 if exists("syntax_on")
     syntax reset
 endif
-let g:colors_name="zenburn"
+let g:colors_name="darkburn"
 
 hi Boolean         guifg=#dca3a3
 hi Character       guifg=#dca3a3 gui=bold
