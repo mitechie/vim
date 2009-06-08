@@ -153,6 +153,11 @@ set wildmode=longest,list
 " }}}
 
 " MISC {{{
+" we much prefer jj over esc
+" this is to try to get me to quit using ctrl-c
+ino jj <esc>
+cno jj <c-c>
+
 
 " Y yanks to the end of the line
 nmap Y y$
@@ -269,7 +274,7 @@ if version>=600
         set mousehide
 		"colorscheme tango2
 		"colorscheme lucius
-		colorscheme wombat
+		colorscheme darkburn
 
 
         " To set the toolbars off (icons on top of the screen)
@@ -278,7 +283,7 @@ if version>=600
         set background=dark   " adapt colors for dark background
         " colorscheme tango2   " use this color scheme
 		"colorscheme lucius
-		colorscheme wombat
+		colorscheme darkburn
     endif
 endif
 " }}}
@@ -486,10 +491,13 @@ source ~/.vim/twitvim.vim
 " Clear out all of the debug dump in the current buffer
 function! RHClearDebug()
     if &filetype == 'PHP' 
-        execute "g/var_dump/d"
+        execute "bufdo! g/var_dump/d"
     elseif &filetype == 'JAVASCRIPT'
-        execute "g/console.log/d"
+        execute "bufdo! g/console.log/d"
     endif
+
+    execute "rewind<CR>"
+
 endfunction
 
 if !exists(":RHClearDebug")
