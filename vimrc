@@ -162,6 +162,9 @@ cno jj <c-c>
 " Y yanks to the end of the line
 nmap Y y$
 
+" Maps for jj to replace my ctrl-c in use
+ino jj <esc>
+cno jj <c-c>
 
 " Test for the pyflakes file
 filetype plugin indent on
