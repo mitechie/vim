@@ -4,7 +4,8 @@
 " Maintainer: Taurus Olson <taurusolson@gmail.com>
 " License:    GPL
 " Created:    2009-03-27 20:25:21 CET
-" Version:    1.1
+" Modified:   2009-06-06 21:18:55 CET
+" Version:    1.2
 
 " Modified version of zenburn originally created by: 
 " Maintainer:   Jani Nurminen <slinky@iki.fi>
@@ -30,30 +31,30 @@
 " * You can now set a darker background for bright environments. To activate, use:
 "   contrast Zenburn, use:
 "
-     let g:zenburn_high_Contrast = 1
+     let g:darkburn_high_Contrast = 1
 "
 " * To get more contrast to the Visual selection, use
 "   
-"     let g:zenburn_alternate_Visual = 1
+"     let g:darkburn_alternate_Visual = 1
 " 
 " * To use alternate colouring for Error message, use
 "     
-      let g:zenburn_alternate_Error = 1
+      let g:darkburn_alternate_Error = 1
 "
 " * The new default for Include is a duller orange. To use the original
 "   colouring for Include, use
 "     
-      let g:zenburn_alternate_Include = 1
+      let g:darkburn_alternate_Include = 1
 "
 " * Work-around to a Vim bug, it seems to misinterpret ctermfg and 234 and 237
 "   as light values, and sets background to light for some people. If you have
 "   this problem, use:
 "
-      let g:zenburn_force_dark_Background = 1
+      let g:darkburn_force_dark_Background = 1
 "
 " * To turn the parameter(s) back to defaults, use UNLET:
 "
-"      unlet g:zenburn_alternate_Include
+"      unlet g:darkburn_alternate_Include
 "
 "   Setting to 0 won't work!
 "
@@ -202,7 +203,7 @@ if &t_Co > 255
     hi PMenu      ctermfg=248  ctermbg=0
     hi PMenuSel   ctermfg=223 ctermbg=235
 
-    if exists("g:zenburn_high_Contrast")
+    if exists("g:darkburn_high_Contrast")
         hi Normal ctermfg=188 ctermbg=234
     else
         hi Normal ctermfg=188 ctermbg=237
@@ -229,7 +230,7 @@ if &t_Co > 255
     endif
 endif
 
-if exists("g:zenburn_force_dark_Background")
+if exists("g:darkburn_force_dark_Background")
     " Force dark background, because of a bug in VIM:  VIM sets background
     " automatically during "hi Normal ctermfg=X"; it misinterprets the high
     " value (234 or 237 above) as a light color, and wrongly sets background to
@@ -237,7 +238,7 @@ if exists("g:zenburn_force_dark_Background")
     set background=dark
 endif
 
-if exists("g:zenburn_high_Contrast")
+if exists("g:darkburn_high_Contrast")
     " use new darker background
     hi Normal          guifg=#ffffff guibg=#1f1f1f
     hi CursorLine      guibg=#121212 gui=bold
@@ -268,7 +269,7 @@ else
 endif
     
 
-if exists("g:zenburn_alternate_Visual")
+if exists("g:darkburn_alternate_Visual")
     " Visual with more contrast, thanks to Steve Hall & Cream posse
     " gui=none fixes weird highlight problem in at least GVim 7.0.66, thanks to Kurt Maier
     hi Visual          guifg=#000000 guibg=#71d3b4 gui=none
@@ -279,7 +280,7 @@ else
     hi VisualNOS       guifg=#71d3b4 guibg=#233323 gui=none
 endif
 
-if exists("g:zenburn_alternate_Error")
+if exists("g:darkburn_alternate_Error")
     " use a bit different Error
     hi Error           guifg=#ef9f9f guibg=#201010 gui=bold  
 else
@@ -287,7 +288,7 @@ else
     hi Error           guifg=#e37170 guibg=#332323 gui=none
 endif
 
-if exists("g:zenburn_alternate_Include")
+if exists("g:darkburn_alternate_Include")
     " original setting
     hi Include         guifg=#ffcfaf  gui=bold
 else
