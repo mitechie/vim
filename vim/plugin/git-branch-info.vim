@@ -1,1 +1,0 @@
-/home/rharding/.vim/submodule/vim-git-branch-info/git-branch-info.vim
