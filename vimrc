@@ -169,6 +169,10 @@ cno jj <c-c>
 " Test for the pyflakes file
 filetype plugin indent on
 
+" map ctrl-c to something else so I quick using it
+map <c-c> <Nop>
+imap <c-c> <Nop>
+
 ",v brings up my .vimrc
 ",V reloads it -- making all changes active (have to save first)
 map <leader>v :sp ~/.vimrc<CR><C-W>_
