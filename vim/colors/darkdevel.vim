@@ -50,8 +50,8 @@ set cursorline
   "highlight MatchParen
   "highlight ModeMsg
   "highlight MoreMsg
-  highlight NonText         ctermfg=Gray        guifg=#777777     ctermbg=NONE        guibg=#000000
-  highlight Normal          ctermfg=Gray        guifg=#CCCCCC     ctermbg=NONE        guibg=#000000
+  highlight NonText         ctermfg=Gray        guifg=#777777     ctermbg=NONE        guibg=#111111
+  highlight Normal          ctermfg=Gray        guifg=#CCCCCC     ctermbg=NONE        guibg=#111111
 
 " Popup menu style
 " ================
@@ -138,7 +138,7 @@ set cursorline
   highlight link Typedef      Type
 
 
-  highlight Error                     guifg=#FFFFFF   guibg=#990000
+  highlight Error                     guifg=#000000   guibg=#FF0000
   highlight Search                    guibg=#FFFF00
 
 " Style for special symbols

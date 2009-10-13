@@ -43,7 +43,7 @@ if v:version < 700
 endif
 
 " Public Interface {{{1
-nmap <silent> <unique> <Leader>b :BufExplorer<CR>
+"nmap <silent> <unique> <Leader>b :BufExplorer<CR>
 
 " Create commands {{{1
 command BufExplorer :call StartBufExplorer(has ("gui") ? "drop" : "hide edit")

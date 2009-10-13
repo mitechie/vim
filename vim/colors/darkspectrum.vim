@@ -65,6 +65,7 @@ hi Visual		guifg=#FFFFFF guibg=#333333 gui=none
 "hi Visual		guifg=#FFFFFF guibg=#4e5456 gui=none
 hi IncSearch	guibg=#FFFFFF guifg=#ef5939
 hi Search		guibg=#ad7fa8 guifg=#FFFFFF
+hi Search		guibg=#990000 guifg=#FFFFFF
 hi SpecialKey	guifg=#888a85
 
 hi Title		guifg=#ef5939

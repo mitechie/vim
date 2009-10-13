@@ -104,7 +104,7 @@ set ls=2                " allways show status line
 set tabstop=4           " numbers of spaces of tab character
 set shiftwidth=4        " numbers of spaces to (auto)indent
 set scrolloff=3         " keep 3 lines when scrolling
-"set cursorline          " have a line indicate the cursor location
+set nocursorline          " have a line indicate the cursor location
 set cindent             " cindent
 set autoindent          " always set autoindenting on
 set showcmd             " display incomplete commands
@@ -177,6 +177,10 @@ imap <c-c> <Nop>
 ",V reloads it -- making all changes active (have to save first)
 map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+nmap <silent> <Leader>b :LustyJuggler<CR>
+
+
 
 " shortcuts for saving with ctrl-s
 nmap <c-s> :w<CR>
@@ -273,24 +277,24 @@ if version>=600
 
     "---- Options for Windows
     if has("gui_running")
-        set guifont=Liberation\ Mono\ 7" use this font 
+        set guifont=Liberation\ Mono\ 8" use this font 
         set lines=75      " height = 50 lines
         set columns=180       " width = 100 columns
         set background=dark  " adapt colors for background
         set keymodel=
         set mousehide
 		"colorscheme tango2
-		"colorscheme lucius
-		colorscheme darkburn
-
+		colorscheme lucius
+		"colorscheme darkburn
+        "colorscheme darkspectrum
 
         " To set the toolbars off (icons on top of the screen)
         set guioptions-=T
     else
         set background=dark   " adapt colors for dark background
-        " colorscheme tango2   " use this color scheme
-		"colorscheme lucius
-		colorscheme darkburn
+        "colorscheme tango2   " use this color scheme
+		colorscheme lucius
+		"colorscheme darkburn
     endif
 endif
 " }}}
@@ -335,10 +339,23 @@ source ~/.vim/php/php-doc.vim
 source ~/.vim/php/phpfolding.vim
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd BufRead *.php let php_folding=0 
 autocmd BufRead *.php map <C-u> :set paste<CR>:call PhpDoc()<CR>:set nopaste<CR>i
 autocmd BufRead *.php set makeprg=php\ -l\ %
-autocmd BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
-autocmd BufRead *.php let php_folding=0 
+"autocmd BufRead *.php set makeprg=php\ -l\ %
+"autocmd BufRead *.php set errorformat=%m\ in\ %f\ on\ line\ %l
+
+function! RunPhpcs()
+    let l:filename=@%
+    let l:phpcs_output=system('phpcs --report=csv --standard=Zend '.l:filename)
+    let l:phpcs_list=split(l:phpcs_output, "\n")
+    unlet l:phpcs_list[0]
+    cexpr l:phpcs_list
+    cwindow
+endfunction
+autocmd BufRead *.php set errorformat=\"%f\"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,\"%m\",%m\ in\ %f\ on\ line\ %l
+command! Phpcs execute RunPhpcs()
+autocmd BufRead *.php map <leader>M :execute RunPhpcs()<CR>
 
 " HTML Stuff
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -350,8 +367,15 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 " automatically minimize .js files if we can
 " requires the jsmin.pl script and install in CPAN of 
 " MINIFY::Javascript and MINIFY::CSS
-au BufWritePost *.js silent !jsmin.pl %
-au BufWritePost *.css silent !jsmin.pl %
+"au BufWritePost *.js silent !jsmin.pl %
+"au BufWritePost *.css silent !jsmin.pl %
+
+" Build the JS/CSS files for the project based on the workit postactivate
+" functions
+nmap <silent> <leader>jb :!jsbuild.sh<CR> :!cssbuild.sh<CR>
+
+autocmd BufRead *.js set makeprg=jslint\ %
+"autocmd BufRead *.js set errorformat=
 
 " PYTHON Stuff
 " plugin that adds support for pdb from within vim

@@ -216,8 +216,19 @@ snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
 
 # var_dump( ... )
+# tmp override dmp for firephp
+#snippet dmp
+#	var_dump( $${1:var} );
 snippet dmp
-	var_dump( $${1:var} );
+	FB::log( $${1:var} );
+# firephp dumping( ... )
+snippet fd
+	FB::dump( '${1:key}', $${2:var} );
+snippet fl
+	FB::log( ${1:var} );
+
+
+
 
 # check if allowed to edit object/subject
 snippet isauth
