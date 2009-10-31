@@ -284,9 +284,10 @@ if version>=600
         set keymodel=
         set mousehide
 		"colorscheme tango2
-		colorscheme lucius
+		"colorscheme lucius
 		"colorscheme darkburn
         "colorscheme darkspectrum
+        colorscheme hornet
 
         " To set the toolbars off (icons on top of the screen)
         set guioptions-=T
