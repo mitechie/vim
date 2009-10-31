@@ -179,6 +179,8 @@ map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 nmap <silent> <Leader>b :LustyJuggler<CR>
+" this requires ruby which isn't on remote machines
+let g:LustyJugglerSuppressRubyWarning = 1
 
 
 
