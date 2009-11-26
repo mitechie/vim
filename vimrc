@@ -427,6 +427,7 @@ set completeopt+=longest
 
 
 " NERDTree
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 map t :NERDTree<CR>
 
 " For Taglist {{{
