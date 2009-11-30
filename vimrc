@@ -318,6 +318,9 @@ augroup mail
     autocmd!
     autocmd FileType mail set textwidth=70 wrap nonumber nocursorline 
 augroup END
+
+" If we're editing a .txt file then skip line numbers
+au! BufRead,BufNewFile *.txt set nonu
     
 " File formats
 au BufNewFile,BufRead  *.pls set syntax=dosini
