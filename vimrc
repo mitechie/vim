@@ -1,5 +1,4 @@
-" Vimrc - Richard Harding
-"
+
 " Started with base by: Christian Andersen <http://phuzz.org>
 "
 " Shortcuts:
@@ -37,6 +36,7 @@
 " ,V        - reload .vimrc
 " ,c        - transforms camelCase to camel_case
 " ,m        - :make current file
+" ,M        - :run code through phpsniffer
 " ,t        - open todo list
 " ,T        - run HTML Tidy on the content
 " ,b        - open buffer list
@@ -44,8 +44,10 @@
 " <CR>      - create newline with carriage return in normal mode 
 " <SPACE>   - open the current fold we're on
 "
+" K         - check for man page for command under cursor
+"
 " gc        - comment the highlighted text
-" ggc       - comment out the current line
+" gcc       - comment out the current line
 "
 " PERL
 "   F1      - run Perldoc for the current word
@@ -53,6 +55,15 @@
 " PHP
 "   C-u     - run the PHPDOC command for the function we're on
 "               note: doesn't work if pamams wrap lines
+"
+" Cool Commands:
+"   :Dpaste
+"   :Tidy
+"   :BitLy
+"   :TinyUrl
+"   :IsGd
+"   :Bike%
+"   :Git%
 "
 " Version Control
 "  ,d       - svn diff local changes
@@ -361,6 +372,7 @@ autocmd BufRead *.php set errorformat=\"%f\"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,\"%m\",%
 command! Phpcs execute RunPhpcs()
 autocmd BufRead *.php map <leader>M :execute RunPhpcs()<CR>
 
+
 " HTML Stuff
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType javascript call JavaScriptFold()
@@ -518,9 +530,7 @@ nmap <silent> <leader>z :call BZRDiff()<CR>
 
 " }}}
 
-
 source ~/.vim/twitvim.vim
-
 
 """"" Custom Commands {{{
 
@@ -539,6 +549,5 @@ endfunction
 if !exists(":RHClearDebug")
     command RHClearDebug :call RHClearDebug()
 endif
-
 
 " }}}
