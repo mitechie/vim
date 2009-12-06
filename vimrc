@@ -1,6 +1,10 @@
 
 " Started with base by: Christian Andersen <http://phuzz.org>
 "
+" Packages Required:
+" pylint
+" bicyclerepair
+"
 " Shortcuts:
 " tab       - auto complete ctags/etc
 " C-f       - OnmiComplete
@@ -404,8 +408,11 @@ au FileType python set omnifunc=pythoncomplete#Complete
 " Usage: :make (check file)
 " :clist (view list of errors)
 " :cn, :cp (move around list of errors)
-au BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+"au BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+"au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+
+" setup pylint as the python file compiler
+autocmd FileType python compiler pylint
 
 au! BufRead,BufNewFile *.dtpl setfiletype htmldjango
 
